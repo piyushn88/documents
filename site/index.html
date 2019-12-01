@@ -19,7 +19,7 @@
     // Current page data
     var mkdocs_page_name = "Home";
     var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/documents/";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -131,57 +131,6 @@
 <li><code>mkdocs build</code> - Build the documentation site.</li>
 <li><code>mkdocs help</code> - Print this help message.</li>
 </ul>
-<p><strong>Core Service api</strong></p>
-<ul>
-<li>
-<p>K8 Dashboard:             <code>http://myminikube.info:30000/#!/pod?namespace=dev-core</code> </p>
-</li>
-<li>
-<p>suite-ui:                 <code>https://myminikube.info:30070</code> </p>
-</li>
-<li>
-<p>audit-service:                <code>http://myminikube.info:30072</code> </p>
-</li>
-<li>
-<p>core-authorization-service: <code>http://myminikube.info:30073</code> </p>
-</li>
-<li>
-<p>budget service:             <code>http://myminikube.info:30074</code></p>
-</li>
-<li>
-<p>configuration service:        <code>http://myminikube.info:30075</code> </p>
-</li>
-<li>
-<p>account service:          <code>http://myminikube.info:30077/api-docs</code> </p>
-</li>
-<li>
-<p>couchdb:                  <code>http://myminikube.info:30078/_utils</code> </p>
-</li>
-<li>
-<p>help service:             <code>http://myminikube.info:30079</code></p>
-</li>
-<li>
-<p>core-auth:                    <code>https://myminikube.info:30091</code>                    </p>
-</li>
-</ul>
-<p><strong>Orc api flow</strong></p>
-<pre><code class="buildoutcfg">orc/ext/ :      
-Ingest
-    - Extracting : Type = job_state_transition
-    - Ingested    : Type = job_state_transition
-
-Enrich 
-    - InvokeEnrich (onJobEvent)  : Type = invoke_operation
-    - Enriching (onJobEvent)    : Type = job_state_transition
-    - EnrichCompleted (onJobEvent) : Type = job_state_transition
-
-
-orc/ :      
-    Extracting      Type = job_state_transition
-    Ingested        Type = job_state_transition
-    Enriching       Type = job_state_transition
-    EnrichCompleted     Type = job_state_transition
-</code></pre>
               
             </div>
           </div>
@@ -230,5 +179,5 @@ orc/ :
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-12-01 17:21:22
+Build Date UTC : 2019-12-01 17:58:08
 -->
