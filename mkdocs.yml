@@ -1,0 +1,8 @@
+site_name: My Docs
+nav:
+    - Home: index.md
+    - Git: git.md
+    - Git_Commands: git_commands.md
+    - Minikube: minikube.md
+    - Airflow: airflow.md
+theme: readthedocs

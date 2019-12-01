@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Airflow - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Airflow";
+    var mkdocs_page_input_path = "airflow.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../git/">Git</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../git_commands/">Git_Commands</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../minikube/">Minikube</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Airflow</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#what-is-airflow">What is Airflow?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#what-is-a-workflow">What is a Workflow?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#prerequisites">Prerequisites</a></li>
+        
+            <li><a class="toctree-l3" href="#install-airflow">Install Airflow</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Airflow</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="what-is-airflow">What is Airflow?</h2>
+<p>Airflow is a platform to programmatically author, schedule and monitor workflows or data pipelines.</p>
+<h2 id="what-is-a-workflow">What is a Workflow?</h2>
+<ul>
+<li>a sequence of tasks</li>
+<li>started on a schedule or triggered by an event</li>
+<li>frequently used to handle big data processing pipelines</li>
+</ul>
+<p><strong>A typical workflows</strong></p>
+<ol>
+<li>download data from source</li>
+<li>send data somewhere else to process</li>
+<li>Monitor when the process is completed</li>
+<li>Get the result and generate the report</li>
+<li>Send the report out by email</li>
+</ol>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Airflow is written in Python, so I will assume you have it installed on your machine. I’m using Python 3 (because it’s 2017, come on people!), but Airflow is supported on Python 2 as well. I will also assume that you have virtualenv installed.</p>
+<p><code>python3 --version</code></p>
+<pre><code>Python 3.6.0
+</code></pre>
+<p><code>virtualenv --version</code></p>
+<pre><code>15.1.0
+</code></pre>
+<h3 id="install-airflow">Install Airflow</h3>
+<p>Let’s create a workspace directory, and inside it a Python 3 virtualenv directory:</p>
+<pre><code>cd /path/to/my/airflow/workspace
+virtualenv -p `which python3` venv
+    or
+virtualenv -p python3 myenv
+source venv/bin/activate\
+</code></pre>
+
+<p>Now let’s install Airflow 1.8:</p>
+<pre><code>(venv) $ pip install apache-airflow
+</code></pre>
+<p><strong>If ERROR :</strong></p>
+<p>Error while install airflow: By default one of Airflow's dependencies installs a GPL
+raise RuntimeError("By default one of Airflow's dependencies installs a GPL "</p>
+<pre><code>RuntimeError: By default one of Airflow's dependencies installs a GPL dependency (unidecode). To avoid this dependency set SLUGIFY_USES_TEXT_UNIDECODE=yes in your environment when you install or upgrade Airflow. To force installing the GPL version set AIRFLOW_GPL_UNIDECODE
+</code></pre>
+<p><code>export AIRFLOW_GPL_UNIDECODE=yes</code>
+or
+<code>export SLUGIFY_USES_TEXT_UNIDECODE=yes</code>    </p>
+<p>Using export makes the environment variable available to all the subprocesses.
+Also, make sure you are using pip install apache-airflow</p>
+<p>Now we’ll need to create the AIRFLOW_HOME directory where your DAG definition files and Airflow plugins will be stored. Once the directory is created, set the AIRFLOW_HOME environment variable:</p>
+<p><code>(venv) $ cd /path/to/my/airflow/workspace
+(venv) $ mkdir airflow_home
+(venv) $ export AIRFLOW_HOME='pwd'/airflow_home
+(venv) $ airflow initdb</code></p>
+<p>You should now be able to run Airflow commands. Let’s try by issuing the following:</p>
+<p><code>(venv) $ airflow version</code></p>
+<pre><code class="buildoutcfg">     ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+   v1.8.0rc5+apache.incubating
+</code></pre>
+
+<p>If the airflow version command worked, then Airflow also created its default configuration file airflow.cfg in AIRFLOW_HOME:</p>
+<pre><code>airflow_home
+├── airflow.cfg
+└── unittests.cfg
+</code></pre>
+
+<p>Default configuration values stored in airflow.cfg will be fine for this tutorial, but in case you want to tweak any Airflow settings, this is the file to change.</p>
+<p>Initialize the Airflow DB</p>
+<p>Next step is to issue the following command, which will create and initialize the Airflow SQLite database:</p>
+<pre><code>(venv) $ airflow initdb
+</code></pre>
+<p>The database will be created in airflow.db by default.</p>
+<pre><code>airflow_home
+├── airflow.cfg
+├── airflow.db        &lt;- Airflow SQLite DB
+└── unittests.cfg
+</code></pre>
+
+<p>Using SQLite is an adequate solution for local testing and development, but it does not support concurrent access. In a production environment, you will most certainly want to use a more robust database solution such as Postgres or MySQL.</p>
+<p>Start the Airflow web server</p>
+<p>Airflow’s UI is provided in the form of a Flask web application. You can start it by issuing the command:</p>
+<pre><code>(venv) $ airflow webserver
+</code></pre>
+<p>Now visit the Airflow UI by navigating your browser to port 8080 on the host where Airflow was started, for example: http://localhost:8080/admin/</p>
+<p>Airflow comes with a number of example DAGs. Note that these examples may not work until you have at least one DAG definition file in your own dags_folder. You can hide the example DAGs by changing the load_examples setting in airflow.cfg.</p>
+<p>First Airflow DAG</p>
+<p>OK, if everything is ready, let’s start writing some code. We’ll start by creating a Hello World workflow, which does nothing other then sending “Hello world!” to the log.
+Create your dags_folder, that is the directory where your DAG definition files will be stored in AIRFLOW_HOME/dags. Inside that directory create a file named hello_world.py.</p>
+<pre><code>airflow_home
+├── airflow.cfg
+├── airflow.db
+├── dags                &lt;- Your DAGs directory
+│   └── hello_world.py  &lt;- Your DAG definition file
+└── unittests.cfg
+</code></pre>
+
+<p>Add the following code to dags/hello_world.py:
+airflow_home/dags/hello_world.pyThis file creates a simple DAG with just two operators, the DummyOperator, which does nothing and a PythonOperator which calls the print_hello function when its task is executed.</p>
+<p>Running the DAG
+In order to run DAG, open a second terminal and start the Airflow scheduler by issuing the following commands:</p>
+<pre><code>from datetime import datetime
+from airflow import DAG
+from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.python_operator import PythonOperator
+
+def print_hello():
+    return 'Hello world!'
+
+dag = DAG('hello_world', description='Simple tutorial DAG',
+          schedule_interval='0 12 * * *',
+          start_date=datetime(2017, 3, 20), catchup=False)
+
+dummy_operator = DummyOperator(task_id='dummy_task', retries=3, dag=dag)
+
+hello_operator = PythonOperator(task_id='hello_task', python_callable=print_hello, dag=dag)
+
+dummy_operator &gt;&gt; hello_operator
+</code></pre>
+
+<pre><code>$ cd /path/to/my/airflow/workspace
+$ export AIRFLOW_HOME=`pwd`/airflow_home
+$ source venv/bin/activate
+(venv) $ airflow scheduler
+</code></pre>
+<p>The scheduler will send tasks for execution. The default Airflow settings rely on an executor named SequentialExecutor, which is started automatically by the scheduler. In production you would probably want to use a more robust executor, such as the CeleryExecutor.
+When you reload the Airflow UI in your browser, you should see your hello_world DAG listed in Airflow UI.</p>
+<p>Hello World DAG in Airflow UI
+In order to start a DAG Run, first turn the workflow on (arrow 1), then click the Trigger Dagbutton (arrow 2) and finally, click on the Graph View (arrow 3) to see the progress of the run.</p>
+<p>Hello World DAG Run - Graph View
+You can reload the graph view until both tasks reach the status Success. When they are done, you can click on the hello_task and then click View Log. If everything worked as expected, the log should show a number of lines</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../minikube/" class="btn btn-neutral" title="Minikube"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../minikube/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Git_Commands - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Git_Commands";
+    var mkdocs_page_input_path = "git_commands.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../git/">Git</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Git_Commands</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#git-commands">Git Commands</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#basics">Basics</a></li>
+        
+            <li><a class="toctree-l3" href="#advance">Advance</a></li>
+        
+            <li><a class="toctree-l3" href="#git-global-setup">Git global setup</a></li>
+        
+            <li><a class="toctree-l3" href="#existing-folder">Existing folder</a></li>
+        
+            <li><a class="toctree-l3" href="#push-an-existing-repository-from-the-command-line">Push an existing repository from the command line</a></li>
+        
+            <li><a class="toctree-l3" href="#push-using-diff-branch">Push using diff branch</a></li>
+        
+            <li><a class="toctree-l3" href="#add-submodule">Add submodule</a></li>
+        
+            <li><a class="toctree-l3" href="#understanding">Understanding</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../minikube/">Minikube</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../airflow/">Airflow</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Git_Commands</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="git-commands">Git Commands</h1>
+<h4 id="basics">Basics</h4>
+<pre><code>git init
+git add .
+git commit -m "first commit"
+git remote add origin git@bitbucket.org:my_friends_gsl/ad_docker-compose.git
+git push -u origin master
+git tag v0.1
+git push origin v0.1
+</code></pre>
+<h4 id="advance">Advance</h4>
+<pre><code>git log     # git history
+git log --all --decorate --oneline --graph      # commit history graph
+git branch (branch-name) = create a branch
+git checkout (branch-name)      # checkout a branch/move head pointer
+git commit -a -m "commit message"       # commit all modified and tracked files in on command (bypass separate 'git add' command)
+git diff master..SDN        #diff between 2 branches
+git merge (branch-name)         # merge branches (fast-forward and 3-way merges)
+git branch --merged         # see branches merged into the current branch
+git branch -d (branch-name)         # delete a branch, only if already merged
+git branch -D (branch-name)         # delete a branch, including if not already merged (exercise caution here)
+git merge --abort       # abort a merge during a merge conflict situation
+git checkout (commit-hash)      # checkout a commit directly, not through a branch, results in a detached HEAD state
+git stash       # create a stash point
+git stash list         # list stash points
+git stash list -p       # list stash points and show diffs per stash
+git stash apply         # apply most recent stash
+git stash pop          #apply most recent stash, and remove it from saved stashes
+git stash apply (stash reference)       # apply a specific stash point
+git stash save "(description)"      # create a stash point, be more descriptive
+</code></pre>
+<h4 id="git-global-setup">Git global setup</h4>
+<pre><code>git config --global user.name "Piyush Naphade"
+git config --global user.email "piyush.naphade@gslab.com"
+</code></pre>
+<h4 id="existing-folder">Existing folder</h4>
+<pre><code>cd existing_folder
+git init
+git remote add origin git@gitlab.com:Piyushn88/gcp_app_engine_django.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+</code></pre>
+<h4 id="push-an-existing-repository-from-the-command-line">Push an existing repository from the command line</h4>
+<pre><code>git remote add origin https://github.com/piyushn88/Mongo-on-Kube.git
+git push -u origin master
+</code></pre>
+<h4 id="push-using-diff-branch">Push using diff branch</h4>
+<pre><code>git status
+git add .
+git status
+git checkout wip
+git status
+git commit -m "&lt;Add your msg&gt;"
+git push origin wip
+</code></pre>
+<h4 id="add-submodule">Add submodule</h4>
+<pre><code>git submodule add git@github&lt;xyz&gt;.git
+cat .gitmodules
+git diff --cached Mongo-on-Kube
+git diff --cached --submodule
+git commit -am "Added mongo submodule"
+git push -u origin master
+</code></pre>
+<h4 id="understanding">Understanding</h4>
+<p>All the other answers are great, but I find it best to understand them by breaking down files into three categories: unstaged, staged, commit:</p>
+<ul>
+<li><code>--hard</code> should be easy to understand, it restores everything</li>
+<li>
+<p><code>--mixed</code> (default) :</p>
+<ol>
+<li>
+<p><code>unstaged</code> files: don't change</p>
+</li>
+<li>
+<p><code>staged</code> files: move to unstaged</p>
+</li>
+<li>
+<p><code>commit</code> files: move to unstaged</p>
+</li>
+</ol>
+</li>
+<li>
+<p><code>--soft</code>:</p>
+<ol>
+<li>
+<p><code>unstaged</code> files: don't change</p>
+</li>
+<li>
+<p><code>staged</code> files: dont' change</p>
+</li>
+<li>
+<p><code>commit</code> files: move to staged</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>In summary:</p>
+<p><code>--soft</code> option will move everything (except unstaged files) into staging area</p>
+<p><code>--mixed</code> option will move everything into unstaged area</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../minikube/" class="btn btn-neutral float-right" title="Minikube">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../git/" class="btn btn-neutral" title="Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../git/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../minikube/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

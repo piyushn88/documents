@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Home - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Home</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#notes">Notes</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#commands">Commands</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="git/">Git</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="git_commands/">Git_Commands</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="minikube/">Minikube</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="airflow/">Airflow</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="notes">Notes</h1>
+<h2 id="commands">Commands</h2>
+<p><strong>Python Server</strong></p>
+<p>To share the file over network</p>
+<ul>
+<li><code>python -m SimpleHTTPServer 8000</code></li>
+</ul>
+<p><strong>Mkdocs Commands</strong></p>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs help</code> - Print this help message.</li>
+</ul>
+<p><strong>Core Service api</strong></p>
+<ul>
+<li>
+<p>K8 Dashboard:             <code>http://myminikube.info:30000/#!/pod?namespace=dev-core</code> </p>
+</li>
+<li>
+<p>suite-ui:                 <code>https://myminikube.info:30070</code> </p>
+</li>
+<li>
+<p>audit-service:                <code>http://myminikube.info:30072</code> </p>
+</li>
+<li>
+<p>core-authorization-service: <code>http://myminikube.info:30073</code> </p>
+</li>
+<li>
+<p>budget service:             <code>http://myminikube.info:30074</code></p>
+</li>
+<li>
+<p>configuration service:        <code>http://myminikube.info:30075</code> </p>
+</li>
+<li>
+<p>account service:          <code>http://myminikube.info:30077/api-docs</code> </p>
+</li>
+<li>
+<p>couchdb:                  <code>http://myminikube.info:30078/_utils</code> </p>
+</li>
+<li>
+<p>help service:             <code>http://myminikube.info:30079</code></p>
+</li>
+<li>
+<p>core-auth:                    <code>https://myminikube.info:30091</code>                    </p>
+</li>
+</ul>
+<p><strong>Orc api flow</strong></p>
+<pre><code class="buildoutcfg">orc/ext/ :      
+Ingest
+    - Extracting : Type = job_state_transition
+    - Ingested    : Type = job_state_transition
+
+Enrich 
+    - InvokeEnrich (onJobEvent)  : Type = invoke_operation
+    - Enriching (onJobEvent)    : Type = job_state_transition
+    - EnrichCompleted (onJobEvent) : Type = job_state_transition
+
+
+orc/ :      
+    Extracting      Type = job_state_transition
+    Ingested        Type = job_state_transition
+    Enriching       Type = job_state_transition
+    EnrichCompleted     Type = job_state_transition
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="git/" class="btn btn-neutral float-right" title="Git">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="git/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-12-01 17:02:24
+-->
