@@ -64,6 +64,8 @@
         
             <li><a class="toctree-l3" href="#setup">Setup</a></li>
         
+            <li><a class="toctree-l3" href="#basics">Basics</a></li>
+        
             <li><a class="toctree-l3" href="#general">General</a></li>
         
             <li><a class="toctree-l3" href="#reset">Reset</a></li>
@@ -98,11 +100,6 @@
     
 
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../git_commands/">Git_Commands</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -154,8 +151,19 @@
 <p><code>which git</code> - See where Git is located:
 <code>git --version</code> - Get the version of Git:
 <code>git status</code> - Create an alias (shortcut) for
-<code>git config --global alias.st status</code></p>
-<p><code>git help</code> - Help</p>
+<code>git config --global alias.st status</code>
+<code>git help</code> - Help</p>
+<h2 id="basics">Basics</h2>
+<hr />
+<ul>
+<li><code>git init</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m "first commit"</code></li>
+<li><code>git remote add origin git@bitbucket.org:my_friends_gsl/ad_docker-compose.git</code></li>
+<li><code>git push -u origin master</code></li>
+<li><code>git tag v0.1</code></li>
+<li><code>git push origin v0.1</code></li>
+</ul>
 <h2 id="general">General</h2>
 <hr />
 <ul>
@@ -346,6 +354,21 @@ Blame:
 <li><code>git tag -a v1.0.0 -m 'Message'</code> - Create release version with comment:</li>
 <li><code>git checkout v1.0.0</code> - Checkout a specific release version:</li>
 </ul>
+<h4 id="git-global-setup">Git global setup</h4>
+<hr />
+<ul>
+<li><code>git config --global user.name "FirstName Lastname"</code></li>
+<li><code>git config --global user.email "myemail@gmail.com"</code></li>
+</ul>
+<h4 id="add-submodule">Add submodule</h4>
+<hr />
+<pre><code>git submodule add git@github&lt;xyz&gt;.git
+cat .gitmodules
+git diff --cached Mongo-on-Kube
+git diff --cached --submodule
+git commit -am "Added mongo submodule"
+git push -u origin master
+</code></pre>
 <h2 id="archive">Archive</h2>
 <p>Create a zip-archive: <code>git archive --format zip --output filename.zip master</code></p>
 <p>Export/write custom log to a file: <code>git log --author=sven --all &gt; log.txt</code></p>
@@ -365,7 +388,7 @@ Blame:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../git_commands/" class="btn btn-neutral float-right" title="Git_Commands">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../minikube/" class="btn btn-neutral float-right" title="Minikube">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -397,7 +420,7 @@ Blame:
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../git_commands/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../minikube/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
