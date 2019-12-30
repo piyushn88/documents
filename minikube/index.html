@@ -164,37 +164,30 @@
 </ul>
 <h2 id="configure-your-clusters">Configure your cluster:S</h2>
 <hr />
-<pre><code>```
-$ minikube config set memory 4096
-$ minikube config set cpus 2
-$ minikube config set disk-size 30g
-```  
-Set `--memory`, `--cpus`, `--disk-size` to values acceptable to you and resources available on your hosting environment. The above should be considered **minimums.**
+<pre><code>minikube config set memory 4096
+minikube config set cpus 2
+minikube config set disk-size 30g
 
-`minikube start --cpus 4 --memory 8192  --disk-size=80GB`
+Set `--memory`, `--cpus`, `--disk-size` to values acceptable to you and resources available on your hosting environment. The above should be considered **minimums.**
 </code></pre>
+<p><code>minikube start --cpus 4 --memory 8192  --disk-size=80GB</code></p>
 <h2 id="configure-your-hypervisor">Configure your hypervisor</h2>
 <hr />
-<pre><code>5.1 For MacOS/VirtualBox
+<pre><code>For MacOS/VirtualBox
 
     $ minikube config set vm-driver virtualbox
 
-5.2 For Linux/KVM:
+For Linux/KVM:
 
     $ minikube config set vm-driver kvm
-
-**Note that `--vm-driver` is hosting OS specific.**  For MacOS use one of `virtualbox` or `xhyve`.
 </code></pre>
+<p><strong>Note that <code>--vm-driver</code> is hosting OS specific.</strong>  For MacOS use one of <code>virtualbox</code> or <code>xhyve</code>.</p>
 <h2 id="start-your-cluster">Start your cluster:</h2>
 <hr />
-<pre><code>```
-$ minikube start
-```
-</code></pre>
+<p><code>$ minikube start</code></p>
 <h2 id="optional-enable-heapster-for-memory-cpu-usage-statistics">(Optional) Enable heapster for memory &amp; cpu usage statistics:</h2>
 <hr />
-<pre><code>` minikube addons enable heapster`
-</code></pre>
+<p><code>minikube addons enable heapster</code></p>
 <h2 id="install-helm">Install helm</h2>
 <hr />
 <pre><code>For MacOS
@@ -211,16 +204,12 @@ Run Helm and wait for kube-system pods up
 </code></pre>
 <h2 id="impartant-commands">Impartant commands</h2>
 <hr />
-<pre><code>`eval $(minikube docker-env)`
-
-**Important note**: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.
+<p><code>eval $(minikube docker-env)</code></p>
+<pre><code>**Important note**: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.
 </code></pre>
 <h2 id="stop-your-cluster">Stop your cluster:</h2>
 <hr />
-<pre><code>```
-$ minikube stop
-```
-</code></pre>
+<p><code>$ minikube stop</code></p>
               
             </div>
           </div>
