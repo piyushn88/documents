@@ -270,11 +270,8 @@
 <li><code>git pull</code> - Pull</li>
 <li><code>git pull origin branchname</code> - Pull specific branch</li>
 <li><code>git fetch upstream pull/ID/head:new-pr-branch</code> - Fetch a pull request on GitHub by its ID and create a new branch</li>
-</ul>
-<p>Clone to localhost:
-* <code>git clone https://github.com/user/project.git</code> or:
-<code>* git clone ssh://user@domain.com/~/dir/.git</code></p>
-<ul>
+<li><code>git clone https://github.com/user/project.git</code> - Clone to localhost or:</li>
+<li><code>git clone ssh://user@domain.com/~/dir/.git</code> - Clone to localhost</li>
 <li><code>git clone https://github.com/user/project.git ~/dir/folder</code> - Clone to localhost folder</li>
 <li><code>git clone -b branchname https://github.com/user/project.git</code> - Clone specific branch to localhost</li>
 <li><code>git clone https://oauth2:&lt;token&gt;@gitlab.com/username/repo.git</code> - Clone with token authentication (in CI environment)</li>
@@ -367,12 +364,12 @@ Blame:
 </ul>
 <h4 id="add-submodule">Add submodule</h4>
 <hr />
-<pre><code>git submodule add git@github&lt;xyz&gt;.git
-cat .gitmodules
-git diff --cached Mongo-on-Kube
-git diff --cached --submodule
-git commit -am "Added mongo submodule"
-git push -u origin master
+<pre><code>`git submodule add git@github&lt;xyz&gt;.git`
+`cat .gitmodules`
+`git diff --cached Mongo-on-Kube`
+`git diff --cached --submodule`
+`git commit -am "Added mongo submodule"`
+`git push -u origin master`
 </code></pre>
 <h2 id="archive">Archive</h2>
 <p>Create a zip-archive: <code>git archive --format zip --output filename.zip master</code></p>
