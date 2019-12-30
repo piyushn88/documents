@@ -119,34 +119,15 @@
               
                 <h1 id="notes">Notes</h1>
 <h2 id="commands">Commands</h2>
-<p><strong>Python Server</strong></p>
-<p>To share the file over network</p>
+<hr />
 <ul>
-<li><code>python -m SimpleHTTPServer 8000</code></li>
-</ul>
-<p>Mount volume to minikube</p>
-<ul>
-<li><code>minikube mount /home/piyush/Desktop/cb-credential-service/:/home/docker/cb-credential-service</code></li>
-</ul>
-<p>Find service os specicific port </p>
-<ul>
-<li><code>netstat -punta | grep &lt;port&gt;</code></li>
-</ul>
-<p>To print specific column on terminal</p>
-<ul>
-<li><code>ls -l | awk '{print $7}'</code></li>
-</ul>
-<p>To attach pad  logs</p>
-<ul>
-<li><code>k attach -t pod $(k get pods -n dev-core | awk '{print $1}' | grep cb-cred-svc)  -n dev-core</code></li>
-</ul>
-<p>Kuberenetes</p>
-<ul>
+<li><code>python -m SimpleHTTPServer 8000</code> - Python Server: To share the file over network</li>
+<li><code>minikube mount /home/piyush/Desktop/cb-credential-service/:/home/docker/cb-credential-service</code> - Mount volume to minikube</li>
+<li><code>netstat -punta | grep &lt;port&gt;</code> - Find service os specicific port </li>
+<li><code>ls -l | awk '{print $7}'</code> - To print specific column on terminal</li>
+<li><code>k attach -t pod $(k get pods -n dev-core | awk '{print $1}' | grep cb-cred-svc)  -n dev-core</code> - To attach pad  logs</li>
 <li><code>minikube start --cpus 4 --memory 16384  --disk-size=100GB</code></li>
-</ul>
-<p>To enter minikube docker env</p>
-<ul>
-<li><code>eval $(minikube docker-env)</code></li>
+<li><code>eval $(minikube docker-env)</code> - To enter minikube docker env</li>
 </ul>
 <p><code>Important note: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.</code></p>
 <p><strong>Mkdocs Commands</strong></p>
@@ -209,5 +190,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-12-30 16:13:23
+Build Date UTC : 2019-12-30 16:17:36
 -->
