@@ -65,6 +65,30 @@
             
     <li class="toctree-l2"><a href="#installation-minikube">Installation Minikube</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#install-docker-ce">Install Docker CE</a></li>
+        
+            <li><a class="toctree-l3" href="#install-kubectl-v170-is-latest-instructions-here">Install kubectl (v1.7.0 is latest): Instructions here</a></li>
+        
+            <li><a class="toctree-l3" href="#install-minikube-v0210-is-latest-instructions-here">Install minikube (v0.21.0 is latest): Instructions here</a></li>
+        
+            <li><a class="toctree-l3" href="#configure-your-clusters">Configure your cluster:S</a></li>
+        
+            <li><a class="toctree-l3" href="#configure-your-hypervisor">Configure your hypervisor</a></li>
+        
+            <li><a class="toctree-l3" href="#start-your-cluster">Start your cluster:</a></li>
+        
+            <li><a class="toctree-l3" href="#optional-enable-heapster-for-memory-cpu-usage-statistics">(Optional) Enable heapster for memory &amp; cpu usage statistics:</a></li>
+        
+            <li><a class="toctree-l3" href="#install-helm">Install helm</a></li>
+        
+            <li><a class="toctree-l3" href="#impartant-commands">Impartant commands</a></li>
+        
+            <li><a class="toctree-l3" href="#stop-your-cluster">Stop your cluster:</a></li>
+        
+        </ul>
+    
 
     </ul>
 	    </li>
@@ -107,88 +131,96 @@
             <div class="section">
               
                 <h1 id="installation-minikube">Installation Minikube</h1>
-<ol>
-<li>Install Docker CE</li>
-</ol>
-<pre><code>********** Install Docker CE Edition **********
-* `sudo apt-get update`
-* `sudo apt-get install apt-transport-https ca-certificates curl software-properties-common`
-* `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
-* `sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;`
-* `sudo apt-get update`
-* `sudo apt-get install docker-ce`
-* `docker version`
-</code></pre>
-
-<ol>
-<li>Install kubectl (<strong>v1.7.0</strong> is latest): <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Instructions here</a></li>
-</ol>
-<pre><code>********** Install KubeCtl **********
-* `curl -LO https://storage.googleapis.com/kubernetes-release release/$(curl -s https://storage.googleapis.com/kubernetes-release release/stable.txt)/bin/linux/amd64/kubectl`
-* `chmod +x ./kubectl`
-* `sudo mv ./kubectl /usr/local/bin/kubectl`
-* `kubectl version`
-</code></pre>
-
-<ol>
-<li>Install minikube (<strong>v0.21.0</strong> is latest): <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">Instructions here</a></li>
-</ol>
-<pre><code>********** Install MiniKube **********
-* `curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;&amp; chmod +x minikube`
-* `sudo install minikube /usr/local/bin`
-
-********** Install VirtualBox **********
-* `wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc-O- | sudo apt-key add -`
-* `sudo apt-get update`
-* `sudo apt-get install virtualbox`
-</code></pre>
-
-<ol>
-<li>
-<p>Configure your cluster:S</p>
-<p><code>$ minikube config set memory 4096
+<h2 id="install-docker-ce">Install Docker CE</h2>
+<hr />
+<ul>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install apt-transport-https ca-certificates curl software-properties-common</code></li>
+<li><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></li>
+<li><code>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</code></li>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install docker-ce</code></li>
+<li><code>docker version</code></li>
+</ul>
+<h2 id="install-kubectl-v170-is-latest-instructions-here">Install kubectl (<strong>v1.7.0</strong> is latest): <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Instructions here</a></h2>
+<hr />
+<ul>
+<li><code>curl -LO https://storage.googleapis.com/kubernetes-release release/$(curl -s https://storage.googleapis.com/kubernetes-release release/stable.txt)/bin/linux/amd64/kubectl</code></li>
+<li><code>chmod +x ./kubectl</code></li>
+<li><code>sudo mv ./kubectl /usr/local/bin/kubectl</code></li>
+<li><code>kubectl version</code></li>
+</ul>
+<h2 id="install-minikube-v0210-is-latest-instructions-here">Install minikube (<strong>v0.21.0</strong> is latest): <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">Instructions here</a></h2>
+<hr />
+<ul>
+<li><code>curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;&amp; chmod +x minikube</code></li>
+<li><code>sudo install minikube /usr/local/bin</code></li>
+</ul>
+<h6 id="install-virtualbox"><strong><em>*</em></strong><strong><em> Install VirtualBox </em></strong><strong><em>*</em></strong></h6>
+<ul>
+<li><code>wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc-O- | sudo apt-key add -</code></li>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install virtualbox</code></li>
+</ul>
+<h2 id="configure-your-clusters">Configure your cluster:S</h2>
+<hr />
+<pre><code>```
+$ minikube config set memory 4096
 $ minikube config set cpus 2
-$ minikube config set disk-size 30g</code><br />
-Set <code>--memory</code>, <code>--cpus</code>, <code>--disk-size</code> to values acceptable to you and resources available on your hosting environment. The above should be considered <strong>minimums.</strong></p>
-<p><code>minikube start --cpus 4 --memory 8192  --disk-size=80GB</code></p>
-</li>
-<li>
-<p>Configure your hypervisor</p>
-<p>5.1 For MacOS/VirtualBox</p>
-<pre><code>$ minikube config set vm-driver virtualbox
+$ minikube config set disk-size 30g
+```  
+Set `--memory`, `--cpus`, `--disk-size` to values acceptable to you and resources available on your hosting environment. The above should be considered **minimums.**
+
+`minikube start --cpus 4 --memory 8192  --disk-size=80GB`
 </code></pre>
-<p>5.2 For Linux/KVM:</p>
-<pre><code>$ minikube config set vm-driver kvm
+<h2 id="configure-your-hypervisor">Configure your hypervisor</h2>
+<hr />
+<pre><code>5.1 For MacOS/VirtualBox
+
+    $ minikube config set vm-driver virtualbox
+
+5.2 For Linux/KVM:
+
+    $ minikube config set vm-driver kvm
+
+**Note that `--vm-driver` is hosting OS specific.**  For MacOS use one of `virtualbox` or `xhyve`.
 </code></pre>
-<p><strong>Note that <code>--vm-driver</code> is hosting OS specific.</strong>  For MacOS use one of <code>virtualbox</code> or <code>xhyve</code>.</p>
-</li>
-<li>
-<p>Start your cluster:
-    <code>$ minikube start</code></p>
-</li>
-<li>
-<p>(Optional) Enable heapster for memory &amp; cpu usage statistics:</p>
-<p><code>minikube addons enable heapster</code></p>
-</li>
-<li>
-<p>Install helm</p>
-<p>8.1 For MacOS</p>
-<p><code>brew install kubernetes-helm</code></p>
-<p>8.2 For Linux</p>
-<p><code>sudo snap install helm --classic</code></p>
-<p>8.3 Run Helm and wait for kube-system pods up</p>
-<p><code>helm init</code></p>
-</li>
-<li>
-<p>Impartant commands</p>
-<p><code>eval $(minikube docker-env)</code></p>
-<p><strong>Important note</strong>: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.</p>
-</li>
-<li>
-<p>Stop your cluster:
-    <code>$ minikube stop</code></p>
-</li>
-</ol>
+<h2 id="start-your-cluster">Start your cluster:</h2>
+<hr />
+<pre><code>```
+$ minikube start
+```
+</code></pre>
+<h2 id="optional-enable-heapster-for-memory-cpu-usage-statistics">(Optional) Enable heapster for memory &amp; cpu usage statistics:</h2>
+<hr />
+<pre><code>` minikube addons enable heapster`
+</code></pre>
+<h2 id="install-helm">Install helm</h2>
+<hr />
+<pre><code>For MacOS
+
+ `brew install kubernetes-helm`
+
+For Linux
+
+`sudo snap install helm --classic`
+
+Run Helm and wait for kube-system pods up
+
+`helm init`
+</code></pre>
+<h2 id="impartant-commands">Impartant commands</h2>
+<hr />
+<pre><code>`eval $(minikube docker-env)`
+
+**Important note**: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.
+</code></pre>
+<h2 id="stop-your-cluster">Stop your cluster:</h2>
+<hr />
+<pre><code>```
+$ minikube stop
+```
+</code></pre>
               
             </div>
           </div>
