@@ -76,6 +76,8 @@
         
             <li><a class="toctree-l3" href="#stash">Stash</a></li>
         
+            <li><a class="toctree-l3" href="#collaborate">Collaborate</a></li>
+        
             <li><a class="toctree-l3" href="#gitignore-gitkeep">Gitignore &amp; Gitkeep</a></li>
         
             <li><a class="toctree-l3" href="#log">Log</a></li>
@@ -83,8 +85,6 @@
             <li><a class="toctree-l3" href="#compare">Compare</a></li>
         
             <li><a class="toctree-l3" href="#releases-version-tags">Releases &amp; Version Tags</a></li>
-        
-            <li><a class="toctree-l3" href="#collaborate">Collaborate</a></li>
         
             <li><a class="toctree-l3" href="#archive">Archive</a></li>
         
@@ -150,142 +150,140 @@
                 <h1 id="git">Git</h1>
 <p>Show folder content: <code>ls -la</code></p>
 <h2 id="setup">Setup</h2>
-<p>See where Git is located:
-<code>which git</code></p>
-<p>Get the version of Git:
-<code>git --version</code></p>
-<p>Create an alias (shortcut) for <code>git status</code>:
+<hr />
+<p><code>which git</code> - See where Git is located:
+<code>git --version</code> - Get the version of Git:
+<code>git status</code> - Create an alias (shortcut) for
 <code>git config --global alias.st status</code></p>
-<p>Help:
-<code>git help</code></p>
+<p><code>git help</code> - Help</p>
 <h2 id="general">General</h2>
-<p>Initialize Git:
-<code>git init</code></p>
-<p>Get everything ready to commit:
-<code>git add .</code></p>
-<p>Get custom file ready to commit:
-<code>git add index.html</code></p>
-<p>Commit changes:
-<code>git commit -m "Message"</code></p>
-<p>Commit changes with title and description:
-<code>git commit -m "Title" -m "Description..."</code></p>
-<p>Add and commit in one step:
-<code>git commit -am "Message"</code></p>
-<p>Remove files from Git:
-<code>git rm index.html</code></p>
-<p>Update all changes:
-<code>git add -u</code></p>
-<p>Remove file but do not track anymore:
-<code>git rm --cached index.html</code></p>
-<p>Move or rename files:
-<code>git mv index.html dir/index_new.html</code></p>
-<p>Undo modifications (restore files from latest commited version):
-<code>git checkout -- index.html</code></p>
-<p>Restore file from a custom commit (in current branch):
-<code>git checkout 6eb715d -- index.html</code></p>
+<hr />
+<ul>
+<li><code>git init</code> - Initialize Git</li>
+<li><code>git add .</code> - Get everything ready to commit</li>
+<li><code>git add index.html</code> - Get custom file ready to commit</li>
+<li><code>git commit -m "Message"</code> - Commit changes</li>
+<li><code>git commit -m "Title" -m "Description..."</code> - Commit changes with title and description</li>
+<li><code>git commit -am "Message"</code> - Add and commit in one step</li>
+<li><code>git rm index.html</code> - Remove files from Git</li>
+<li><code>git add -u</code> - Update all changes</li>
+<li><code>git rm --cached index.html</code> - Remove file but do not track anymore</li>
+<li><code>git mv index.html dir/index_new.html</code> - Move or rename files</li>
+<li><code>git checkout -- index.html</code> - Undo modifications (restore files from latest commited version):</li>
+<li><code>git checkout 6eb715d -- index.html</code> - Restore file from a custom commit (in current branch)</li>
+</ul>
 <h2 id="reset">Reset</h2>
-<p>Go back to commit:
-<code>git revert 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code></p>
-<p>Soft reset (move HEAD only; neither staging nor working dir is changed):
-<code>git reset --soft 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code></p>
-<p>Undo latest commit: <code>git reset --soft HEAD~</code></p>
-<p>Mixed reset (move HEAD and change staging to match repo; does not affect working dir):
-<code>git reset --mixed 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code></p>
-<p>Hard reset (move HEAD and change staging dir and working dir to match repo):
-<code>git reset --hard 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code></p>
-<p>Hard reset of a single file (<code>@</code> is short for <code>HEAD</code>):
-<code>git checkout @ -- index.html</code></p>
+<hr />
+<ul>
+<li><code>git revert 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code> - Go back to commit</li>
+<li><code>git reset --soft 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code> - Soft reset (move HEAD only; neither staging nor working dir is changed)</li>
+<li><code>git reset --soft HEAD~</code> - Undo latest commit</li>
+<li><code>git reset --mixed 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code> - Mixed reset (move HEAD and change staging to match repo; does not affect working dir)</li>
+<li><code>git reset --hard 073791e7dd71b90daa853b2c5acc2c925f02dbc6</code> - Hard reset (move HEAD and change staging dir and working dir to match repo):</li>
+<li><code>git checkout @ -- index.html</code> - Hard reset of a single file (<code>@</code> is short for <code>HEAD</code>):</li>
+</ul>
 <h2 id="update-delete">Update &amp; Delete</h2>
-<p>Test-Delete untracked files:
-<code>git clean -n</code></p>
-<p>Delete untracked files (not staging):
-<code>git clean -f</code></p>
-<p>Unstage (undo adds):
-<code>git reset HEAD index.html</code></p>
-<p>Update most recent commit (also update the commit message):
-<code>git commit --amend -m "New Message"</code></p>
+<hr />
+<ul>
+<li><code>git clean -n</code> - Test-Delete untracked files</li>
+<li><code>git clean -f</code> - Delete untracked files (not staging)</li>
+<li><code>git reset HEAD index.html</code> - Unstage (undo adds)</li>
+<li><code>git commit --amend -m "New Message"</code> - Update most recent commit (also update the commit message)</li>
+</ul>
 <h2 id="branch">Branch</h2>
-<p>Show branches:
-<code>git branch</code></p>
-<p>Create branch:
-<code>git branch branchname</code></p>
-<p>Change to branch:
-<code>git checkout branchname</code></p>
-<p>Create and change to new branch:
-<code>git checkout -b branchname</code></p>
-<p>Rename branch:
-<code>git branch -m branchname new_branchname</code> or:
-<code>git branch --move branchname new_branchname</code></p>
-<p>Show all completely merged branches with current branch:
-<code>git branch --merged</code></p>
-<p>Delete merged branch (only possible if not HEAD):
-<code>git branch -d branchname</code> or:
-<code>git branch --delete branchname</code></p>
-<p>Delete not merged branch:
-<code>git branch -D branch_to_delete</code></p>
+<hr />
+<ul>
+<li><code>git branch</code> - Show branches</li>
+<li><code>git branch branchname</code> - Create branch</li>
+<li><code>git checkout branchname</code> - Change to branch</li>
+<li><code>git checkout -b branchname</code> - Create and change to new branch</li>
+<li><code>git branch -m branchname new_branchname</code> or:</li>
+<li><code>git branch --move branchname new_branchname</code> - Rename branch</li>
+<li><code>git branch --merged</code> - Show all completely merged branches with current branch</li>
+<li><code>git branch -d branchname</code> or:</li>
+<li><code>git branch --delete branchname</code> - Delete merged branch (only possible if not HEAD)</li>
+<li><code>git branch -D branch_to_delete</code> - Delete not merged branch</li>
+</ul>
 <h2 id="merge">Merge</h2>
-<p>True merge (fast forward):
-<code>git merge branchname</code></p>
-<p>Merge to master (only if fast forward):
-<code>git merge --ff-only branchname</code></p>
-<p>Merge to master (force a new commit):
-<code>git merge --no-ff branchname</code></p>
-<p>Stop merge (in case of conflicts):
-<code>git merge --abort</code></p>
-<p>Stop merge (in case of conflicts):
-<code>git reset --merge</code> // prior to v1.7.4</p>
-<p>Undo local merge that hasn't been pushed yet:
-<code>git reset --hard origin/master</code></p>
-<p>Merge only one specific commit: 
-<code>git cherry-pick 073791e7</code></p>
-<p>Rebase:
-<code>git checkout branchname</code> » <code>git rebase master</code>
-or:
-<code>git merge master branchname</code>
-(The rebase moves all of the commits in <code>master</code> onto the tip of <code>branchname</code>.)</p>
-<p>Cancel rebase:
-<code>git rebase --abort</code></p>
-<p>Squash multiple commits into one:
-<code>git rebase -i HEAD~3</code> (<a href="https://www.devroom.io/2011/07/05/git-squash-your-latests-commits-into-one/">source</a>)</p>
-<p>Squash-merge a feature branch (as one commit):
-<code>git merge --squash branchname</code> (commit afterwards)</p>
+<hr />
+<ul>
+<li><code>git merge branchname</code> - True merge (fast forward):</li>
+<li><code>git merge --ff-only branchname</code> - Merge to master (only if fast forward)</li>
+<li><code>git merge --no-ff branchname</code> - Merge to master (force a new commit)</li>
+<li><code>git merge --abort</code> - Stop merge (in case of conflicts)</li>
+<li><code>git reset --merge</code> // prior to v1.7.4 Stop merge (in case of conflicts)</li>
+<li><code>git reset --hard origin/master</code> - Undo local merge that hasn't been pushed yet</li>
+<li><code>git cherry-pick 073791e7</code> Merge only one specific commit: </li>
+<li><code>git checkout branchname</code> » <code>git rebase master</code> - Rebase
+        or:</li>
+<li><code>git merge master branchname</code>
+    (The rebase moves all of the commits in <code>master</code> onto the tip of <code>branchname</code>.)</li>
+<li><code>git rebase --abort</code> - Cancel rebase:</li>
+<li><code>git rebase -i HEAD~3</code> - Squash multiple commits into one (<a href="https://www.devroom.io/2011/07/05/git-squash-your-latests-commits-into-one/">source</a>)</li>
+<li><code>git merge --squash branchname</code> (commit afterwards) Squash-merge a feature branch (as one commit):</li>
+</ul>
 <h2 id="stash">Stash</h2>
-<p>Put in stash:
-<code>git stash save "Message"</code></p>
-<p>Show stash:
-<code>git stash list</code></p>
-<p>Show stash stats:
-<code>git stash show stash@{0}</code></p>
-<p>Show stash changes:
-<code>git stash show -p stash@{0}</code></p>
-<p>Use custom stash item and drop it:
-<code>git stash pop stash@{0}</code></p>
-<p>Use custom stash item and do not drop it:
-<code>git stash apply stash@{0}</code></p>
-<p>Use custom stash item and index:
-<code>git stash apply --index</code></p>
-<p>Create branch from stash: 
-<code>git stash branch new_branch</code></p>
-<p>Delete custom stash item:
-<code>git stash drop stash@{0}</code></p>
-<p>Delete complete stash:
-<code>git stash clear</code></p>
+<hr />
+<ul>
+<li><code>git stash save "Message"</code> - Put in stash</li>
+<li><code>git stash list</code> - Show stash</li>
+<li><code>git stash show stash@{0}</code> - Show stash stats</li>
+<li><code>git stash show -p stash@{0}</code> - Show stash changes</li>
+<li><code>git stash pop stash@{0}</code> - Use custom stash item and drop it</li>
+<li><code>git stash apply stash@{0}</code> - Use custom stash item and do not drop it</li>
+<li><code>git stash apply --index</code> - Use custom stash item and index</li>
+<li><code>git stash branch new_branch</code> - Create branch from stash</li>
+<li><code>git stash drop stash@{0}</code> - Delete custom stash item</li>
+<li><code>git stash clear</code> - Delete complete stash</li>
+</ul>
+<h2 id="collaborate">Collaborate</h2>
+<hr />
+<ul>
+<li><code>git remote</code> - Show remote</li>
+<li><code>git remote -v</code> - Show remote details</li>
+<li><code>git remote add upstream https://github.com/user/project.git</code> - Add remote upstream from GitHub project</li>
+<li><code>git remote add upstream ssh://root@123.123.123.123/path/to/repository/.git</code> - Add remote upstream from existing empty project on server</li>
+<li><code>git fetch upstream</code> - Fetch</li>
+<li><code>git fetch upstream branchname:local_branchname</code> - Fetch a custom branch</li>
+<li><code>git merge upstream/master</code> - Merge fetched commits</li>
+<li><code>git remote rm origin</code> - Remove origin</li>
+<li><code>git branch -r</code> - Show remote branches</li>
+<li><code>git branch -a</code> - Show all branches (remote and local)</li>
+<li><code>git checkout -b local_branchname upstream/remote_branchname</code> - Create and checkout branch from a remote branch:</li>
+<li><code>git diff origin/master..master</code> - Compare:</li>
+<li><code>git push -u origin master</code> - Push (set default with <code>-u</code>):</li>
+<li><code>git push origin master</code> - Push</li>
+<li><code>git push origin master --force</code> - Force-Push</li>
+<li><code>git pull</code> - Pull</li>
+<li><code>git pull origin branchname</code> - Pull specific branch</li>
+<li><code>git fetch upstream pull/ID/head:new-pr-branch</code> - Fetch a pull request on GitHub by its ID and create a new branch</li>
+</ul>
+<p>Clone to localhost:
+* <code>git clone https://github.com/user/project.git</code> or:
+<code>* git clone ssh://user@domain.com/~/dir/.git</code></p>
+<ul>
+<li><code>git clone https://github.com/user/project.git ~/dir/folder</code> - Clone to localhost folder</li>
+<li><code>git clone -b branchname https://github.com/user/project.git</code> - Clone specific branch to localhost</li>
+<li><code>git clone https://oauth2:&lt;token&gt;@gitlab.com/username/repo.git</code> - Clone with token authentication (in CI environment)</li>
+<li><code>git push origin :branchname</code> or: - Delete remote branch (push nothing)</li>
+<li><code>git push origin --delete branchname</code></li>
+</ul>
 <h2 id="gitignore-gitkeep">Gitignore &amp; Gitkeep</h2>
-<p>About: https://help.github.com/articles/ignoring-files</p>
-<p>Useful templates: https://github.com/github/gitignore</p>
-<p>Add or edit gitignore: 
-<code>nano .gitignore</code></p>
-<p>Track empty dir: 
-<code>touch dir/.gitkeep</code></p>
+<hr />
+<ul>
+<li><code>https://help.github.com/articles/ignoring-files</code> - About</li>
+<li><code>https://github.com/github/gitignore</code> - Useful templates</li>
+<li><code>nano .gitignore</code> - Add or edit gitignore</li>
+<li><code>touch dir/.gitkeep</code> - Track empty dir</li>
+</ul>
 <h2 id="log">Log</h2>
-<p>Show commits:
-<code>git log</code></p>
-<p>Show oneline-summary of commits:
-<code>git log --oneline</code></p>
-<p>Show oneline-summary of commits with full SHA-1:
-<code>git log --format=oneline</code></p>
-<p>Show oneline-summary of the last three commits:
-<code>git log --oneline -3</code></p>
+<hr />
+<ul>
+<li><code>git log</code> - Show commits:</li>
+<li><code>git log --oneline</code> - Show oneline-summary of commits:</li>
+<li><code>git log --format=oneline</code> - Show oneline-summary of commits with full SHA-1</li>
+<li>
+<p><code>git log --oneline -3</code> - Show oneline-summary of the last three commits:</p>
 <p>Show only custom commits:
 <code>git log --author="Sven"</code>
 <code>git log --grep="Message"</code>
@@ -297,106 +295,57 @@ or:
 <code>git log --format=fuller</code>
 <code>git log --format=email</code>
 <code>git log --format=raw</code></p>
-<p>Show changes:
-<code>git log -p</code></p>
-<p>Show every commit since special commit for custom file only:
-<code>git log 6eb715d.. index.html</code></p>
-<p>Show changes of every commit since special commit for custom file only:
-<code>git log -p 6eb715d.. index.html</code></p>
-<p>Show stats and summary of commits:
-<code>git log --stat --summary</code></p>
-<p>Show history of commits as graph:
-<code>git log --graph</code></p>
-<p>Show history of commits as graph-summary:
-<code>git log --oneline --graph --all --decorate</code></p>
+</li>
+<li>
+<p><code>git log -p</code> - Show changes:</p>
+</li>
+<li><code>git log 6eb715d.. index.html</code> Show every commit since special commit for custom file only:</li>
+<li><code>git log -p 6eb715d.. index.html</code> - Show changes of every commit since special commit for custom file only:</li>
+<li><code>git log --stat --summary</code> - Show stats and summary of commits:</li>
+<li><code>git log --graph</code> - Show history of commits as graph:</li>
+<li><code>git log --oneline --graph --all --decorate</code> - Show history of commits as graph-summary:</li>
+</ul>
 <h2 id="compare">Compare</h2>
-<p>Compare modified files:
-<code>git diff</code></p>
-<p>Compare modified files and highlight changes only:
-<code>git diff --color-words index.html</code></p>
-<p>Compare modified files within the staging area:
-<code>git diff --staged</code></p>
-<p>Compare branches:
-<code>git diff master..branchname</code></p>
-<p>Compare branches like above:
-<code>git diff --color-words master..branchname^</code></p>
-<p>Compare commits:
-<code>git diff 6eb715d</code>
-<code>git diff 6eb715d..HEAD</code>
-<code>git diff 6eb715d..537a09f</code></p>
-<p>Compare commits of file:
-<code>git diff 6eb715d index.html</code>
-<code>git diff 6eb715d..537a09f index.html</code></p>
-<p>Compare without caring about spaces:
-<code>git diff -b 6eb715d..HEAD</code> or:
-<code>git diff --ignore-space-change 6eb715d..HEAD</code></p>
-<p>Compare without caring about all spaces:
-<code>git diff -w 6eb715d..HEAD</code> or:
-<code>git diff --ignore-all-space 6eb715d..HEAD</code></p>
-<p>Useful comparings:
-<code>git diff --stat --summary 6eb715d..HEAD</code></p>
-<p>Blame:
-<code>git blame -L10,+1 index.html</code></p>
+<hr />
+<ul>
+<li><code>git diff</code> - Compare modified files:</li>
+<li><code>git diff --color-words index.html</code> - Compare modified files and highlight changes only:</li>
+<li><code>git diff --staged</code> - Compare modified files within the staging area:</li>
+<li><code>git diff master..branchname</code> - Compare branches:</li>
+<li><code>git diff --color-words master..branchname^</code> - Compare branches like above: <pre><code>Compare commits:
+`git diff 6eb715d`
+`git diff 6eb715d..HEAD`
+`git diff 6eb715d..537a09f`
+
+Compare commits of file:
+`git diff 6eb715d index.html`
+`git diff 6eb715d..537a09f index.html`
+
+Compare without caring about spaces:
+`git diff -b 6eb715d..HEAD` or:
+`git diff --ignore-space-change 6eb715d..HEAD`
+
+Compare without caring about all spaces:
+`git diff -w 6eb715d..HEAD` or:
+`git diff --ignore-all-space 6eb715d..HEAD`
+
+Useful comparings:
+`git diff --stat --summary 6eb715d..HEAD`
+
+Blame:
+`git blame -L10,+1 index.html`
+</code></pre>
+</li>
+</ul>
 <h2 id="releases-version-tags">Releases &amp; Version Tags</h2>
-<p>Show all released versions:
-<code>git tag</code></p>
-<p>Show all released versions with comments:
-<code>git tag -l -n1</code></p>
-<p>Create release version:
-<code>git tag v1.0.0</code></p>
-<p>Create release version with comment:
-<code>git tag -a v1.0.0 -m 'Message'</code></p>
-<p>Checkout a specific release version:
-<code>git checkout v1.0.0</code></p>
-<h2 id="collaborate">Collaborate</h2>
-<p>Show remote:
-<code>git remote</code></p>
-<p>Show remote details:
-<code>git remote -v</code></p>
-<p>Add remote upstream from GitHub project:
-<code>git remote add upstream https://github.com/user/project.git</code></p>
-<p>Add remote upstream from existing empty project on server:
-<code>git remote add upstream ssh://root@123.123.123.123/path/to/repository/.git</code></p>
-<p>Fetch:
-<code>git fetch upstream</code></p>
-<p>Fetch a custom branch:
-<code>git fetch upstream branchname:local_branchname</code></p>
-<p>Merge fetched commits:
-<code>git merge upstream/master</code></p>
-<p>Remove origin:
-<code>git remote rm origin</code></p>
-<p>Show remote branches:
-<code>git branch -r</code></p>
-<p>Show all branches (remote and local):
-<code>git branch -a</code></p>
-<p>Create and checkout branch from a remote branch:
-<code>git checkout -b local_branchname upstream/remote_branchname</code></p>
-<p>Compare:
-<code>git diff origin/master..master</code></p>
-<p>Push (set default with <code>-u</code>):
-<code>git push -u origin master</code></p>
-<p>Push:
-<code>git push origin master</code></p>
-<p>Force-Push:
-`git push origin master --force</p>
-<p>Pull:
-<code>git pull</code></p>
-<p>Pull specific branch:
-<code>git pull origin branchname</code></p>
-<p>Fetch a pull request on GitHub by its ID and create a new branch:
-<code>git fetch upstream pull/ID/head:new-pr-branch</code></p>
-<p>Clone to localhost:
-<code>git clone https://github.com/user/project.git</code> or:
-<code>git clone ssh://user@domain.com/~/dir/.git</code></p>
-<p>Clone to localhost folder:
-<code>git clone https://github.com/user/project.git ~/dir/folder</code></p>
-<p>Clone specific branch to localhost:
-<code>git clone -b branchname https://github.com/user/project.git</code></p>
-<p>Clone with token authentication (in CI environment):
-<code>git clone https://oauth2:&lt;token&gt;@gitlab.com/username/repo.git</code></p>
-<p>Delete remote branch (push nothing):
-<code>git push origin :branchname</code> or:
-<code>git push origin --delete branchname</code></p>
+<hr />
+<ul>
+<li><code>git tag</code> - Show all released versions</li>
+<li><code>git tag -l -n1</code> - Show all released versions with comments:</li>
+<li><code>git tag v1.0.0</code> - Create release version:</li>
+<li><code>git tag -a v1.0.0 -m 'Message'</code> - Create release version with comment:</li>
+<li><code>git checkout v1.0.0</code> - Checkout a specific release version:</li>
+</ul>
 <h2 id="archive">Archive</h2>
 <p>Create a zip-archive: <code>git archive --format zip --output filename.zip master</code></p>
 <p>Export/write custom log to a file: <code>git log --author=sven --all &gt; log.txt</code></p>
