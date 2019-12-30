@@ -111,47 +111,36 @@
 <li>Install Docker CE</li>
 </ol>
 <pre><code>********** Install Docker CE Edition **********
-1. sudo apt-get update
-2. sudo apt-get install \
- apt-transport-https \
- ca-certificates \
- curl \
- software-properties-common
-3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
-apt-key add -
-4. sudo add-apt-repository \
- &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
- $(lsb_release -cs) \
- stable&quot;
-5. sudo apt-get update
-6. sudo apt-get install docker-ce
-7. docker version
+* `sudo apt-get update`
+* `sudo apt-get install apt-transport-https ca-certificates curl software-properties-common`
+* `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+* `sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;`
+* `sudo apt-get update`
+* `sudo apt-get install docker-ce`
+* `docker version`
 </code></pre>
 
 <ol>
 <li>Install kubectl (<strong>v1.7.0</strong> is latest): <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Instructions here</a></li>
 </ol>
 <pre><code>********** Install KubeCtl **********
-1. curl -LO https://storage.googleapis.com/kubernetes-release/
-release/$(curl -s https://storage.googleapis.com/kubernetes-release/
-release/stable.txt)/bin/linux/amd64/kubectl
-2. chmod +x ./kubectl
-3. sudo mv ./kubectl /usr/local/bin/kubectl
-4. kubectl version
+* `curl -LO https://storage.googleapis.com/kubernetes-release release/$(curl -s https://storage.googleapis.com/kubernetes-release release/stable.txt)/bin/linux/amd64/kubectl`
+* `chmod +x ./kubectl`
+* `sudo mv ./kubectl /usr/local/bin/kubectl`
+* `kubectl version`
 </code></pre>
 
 <ol>
 <li>Install minikube (<strong>v0.21.0</strong> is latest): <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">Instructions here</a></li>
 </ol>
 <pre><code>********** Install MiniKube **********
-1. curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;&amp; chmod +x minikube
-2. sudo install minikube /usr/local/bin
+* `curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;&amp; chmod +x minikube`
+* `sudo install minikube /usr/local/bin`
 
 ********** Install VirtualBox **********
-1. wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc
--O- | sudo apt-key add -
-2. sudo apt-get update
-3. sudo apt-get install virtualbox
+* `wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc-O- | sudo apt-key add -`
+* `sudo apt-get update`
+* `sudo apt-get install virtualbox`
 </code></pre>
 
 <ol>
