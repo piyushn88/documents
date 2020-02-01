@@ -122,10 +122,20 @@
 <li><code>ls -l | awk '{print $7}'</code> - To print specific column on terminal</li>
 <li><code>k attach -t pod $(k get pods -n dev-core | awk '{print $1}' | grep cb-cred-svc)  -n dev-core</code> - To attach pad  logs</li>
 <li><code>minikube start --cpus 4 --memory 16384  --disk-size=100GB</code></li>
-<li><code>eval $(minikube docker-env)</code> - To enter minikube docker env<pre><code>Important note: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.
-</code></pre>
-</li>
+<li><code>eval $(minikube docker-env)</code> - To enter minikube docker env</li>
+<li>kubectl get deployments -n dev-core -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch deployment {} --type=json -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/imagePullPolicy", "value": "IfNotPresent"}]' -n dev-core</li>
+<li><code>kubectl port-forward svc/mongodb -n ecam-ext 27017:27017</code></li>
 </ul>
+<p>Important note: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.</p>
+<pre><code>helm del mongodb
+helm del mongodb --purge
+helm upgrade --install --namespace ecam-ext \
+  --set mongodbRootPassword=root \
+  --set replicaSet.enabled=true \
+  --set image.tag="4.2" \
+  mongodb \
+  stable/mongodb
+</code></pre>
 <p><strong>Mkdocs Commands</strong></p>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
@@ -186,5 +196,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-12-30 17:53:14
+Build Date UTC : 2020-02-01 16:57:34
 -->
