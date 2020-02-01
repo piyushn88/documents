@@ -126,10 +126,14 @@
 <li><code>kubectl port-forward svc/mongodb -n ecam-ext 27017:27017</code></li>
 </ul>
 <p>Important note: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.</p>
-<pre><code>kubectl get deployments -n dev-core -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch deployment {} --type=json -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/imagePullPolicy", "value": "IfNotPresent"}]' -n dev-core
-
-
-helm del mongodb
+<p>To change image pull policy</p>
+<pre><code>kubectl get deployments -n namespace -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch deployment {} --type=json -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/imagePullPolicy", "value": "IfNotPresent"}]' -n namespace
+</code></pre>
+<p>To step down pods all pods</p>
+<pre><code>kubectl get deployments -n namespace -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch deployment {} --type=json -p='[{"op": "replace", "path": "/spec/replicas", "value": 1}]' -n namespace
+</code></pre>
+<p>Install mongoDB</p>
+<pre><code>helm del mongodb
 helm del mongodb --purge
 helm upgrade --install --namespace ecam-ext \
   --set mongodbRootPassword=root \
@@ -198,5 +202,5 @@ helm upgrade --install --namespace ecam-ext \
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-02-01 18:37:29
+Build Date UTC : 2020-02-01 18:48:03
 -->
